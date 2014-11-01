@@ -9,8 +9,8 @@
   .field
     = f.label :body
     = f.text_field :body
-  .field
-    = f.label :question
-    = f.text_field :question
+
+  = collection_select(:answer, :question_id, Question.all, :id, :show)
+
   .actions
     = f.submit 'Save'
