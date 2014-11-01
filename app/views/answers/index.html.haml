@@ -11,7 +11,7 @@
   - @answers.each do |answer|
     %tr
       %td= answer.body
-      %td= answer.question
+      %td= answer.question.show
       %td= link_to 'Show', answer
       %td= link_to 'Edit', edit_answer_path(answer)
       %td= link_to 'Destroy', answer, :method => :delete, :data => { :confirm => 'Are you sure?' }

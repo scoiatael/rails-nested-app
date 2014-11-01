@@ -5,7 +5,7 @@
   = @answer.body
 %p
   %b Question:
-  = @answer.question
+  = @answer.question.show
 
 = link_to 'Edit', edit_answer_path(@answer)
 \|
