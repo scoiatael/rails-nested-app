@@ -1,8 +1,7 @@
 %p#notice= notice
 
-%p
-  %b Title:
-  = @question.title
+= render "questions/show", locals: { question: @question }
+
 %p
   %b Comment:
   = @question.comment
