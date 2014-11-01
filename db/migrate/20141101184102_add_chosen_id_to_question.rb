@@ -1,0 +1,5 @@
+class AddChosenIdToQuestion < ActiveRecord::Migration
+  def change
+    add_reference :questions, :answer, index: true
+  end
+end

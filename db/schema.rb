@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141101174105) do
+ActiveRecord::Schema.define(version: 20141101184102) do
 
   create_table "answers", force: true do |t|
     t.string   "body"
@@ -34,8 +34,10 @@ ActiveRecord::Schema.define(version: 20141101174105) do
     t.integer  "questionnaire_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "answer_id"
   end
 
+  add_index "questions", ["answer_id"], name: "index_questions_on_answer_id"
   add_index "questions", ["questionnaire_id"], name: "index_questions_on_questionnaire_id"
 
 end
