@@ -13,7 +13,9 @@
     = f.label :comment
     = f.text_area :comment
 
-  = collection_select(:question, :questionnaire_id, Questionnaire.all, :id, :show)
+  .field
+    = f.label :questionnaire
+    = collection_select(:question, :questionnaire_id, Questionnaire.all, :id, :show)
 
   .actions
     = f.submit 'Save'
