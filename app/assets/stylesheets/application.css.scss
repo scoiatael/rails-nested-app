@@ -13,3 +13,29 @@
  *= require_tree .
  *= require_self
  */
+.avatar {
+  border-radius: 100px;
+  border-color: white;
+  border-width: 10px;
+  width: 100px;
+  height: 100px;
+}
+
+.icon {
+  color: black;
+  background-color: white;
+}
+
+.icon:hover {
+  background-color: white;
+  color: #a3a3a3;
+}
+
+.center {
+  margin:0 auto;
+  display: block;
+}
+
+.center-text {
+  text-align:center;
+}

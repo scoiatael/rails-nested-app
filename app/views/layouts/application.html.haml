@@ -5,6 +5,7 @@
     %title= content_for?(:title) ? yield(:title) : 'Nested App'
     %meta{:name => "description", :content => "#{content_for?(:description) ? yield(:description) : 'Nested App'}"}
     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true
+    = stylesheet_link_tag '//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css', media: 'all'
     -# Modernizr is required for Zurb Foundation
     = javascript_include_tag 'vendor/modernizr'
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
