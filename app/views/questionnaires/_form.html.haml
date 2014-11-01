@@ -10,13 +10,15 @@
     = f.label :title
     = f.text_field :title
 
+  %b Questions:
   = f.fields_for :questions do |ff|
     .field
-      = ff.label :title
       = ff.text_field :title
       - if ff.object.persisted?
-        = ff.check_box :_destroy
-        = ff.label :_destroy, "Destroy"
-
+        %b
+          =link_to 'Edit', edit_question_path(ff.object)
+      %div
+        Answer:
+        = ff.collection_radio_buttons :answer_id, ff.object.answers, :id, :body
   .actions
     = f.submit 'Save'

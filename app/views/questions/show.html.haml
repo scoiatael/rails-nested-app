@@ -8,6 +8,12 @@
 %p
   %b Questionnaire:
   = @question.questionnaire.show
+%p
+  %b Answers:
+  %ol 
+  - @question.answers.each do |a|
+    %li
+      = a.body
 
 = link_to 'Edit', edit_question_path(@question)
 \|

@@ -1,4 +1,4 @@
-= form_for @question do |f|
+= form_for setup_question(@question) do |f|
   - if @question.errors.any?
     #error_explanation
       %h2= "#{pluralize(@question.errors.count, "error")} prohibited this question from being saved:"
@@ -16,6 +16,18 @@
   .field
     = f.label :questionnaire
     = collection_select(:question, :questionnaire_id, Questionnaire.all, :id, :show)
+
+  .field
+    = f.label :chosen_answer
+    = collection_select(:question, :answer_id, @question.answers, :id, :body)
+
+  = f.fields_for :answers do |ff|
+    .field
+      = ff.label :body
+      = ff.text_field :body
+      - if ff.object.persisted?
+        = ff.check_box :_destroy
+        = ff.label :_destroy, "Destroy"
 
   .actions
     = f.submit 'Save'
